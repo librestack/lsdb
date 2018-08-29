@@ -23,6 +23,7 @@ install:
 
 clean:
 	@$(MAKE) -C src $@
+	@$(MAKE) -C test $@
 
 test:
 	@$(MAKE) -C test $@
