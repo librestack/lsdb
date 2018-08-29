@@ -12,4 +12,5 @@ all: $(TESTS)
 .PHONY: clean
 
 clean:
+	rm -rf testdb
 	-$(RM) $(TESTS)
