@@ -1,6 +1,7 @@
 TESTS = local mtest
 
 test: all
+	rm -rf testdb && mkdir testdb
 	@for T in $(TESTS); do ./$$T; done
 
 mtest: mtest.c
