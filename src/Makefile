@@ -20,7 +20,7 @@ log.o: log.h log.c
 misc.o: misc.h misc.c
 	$(CC) $(CFLAGS) -c misc.c $(LIBS)
 
-install: $(LIBRARY)
+install: $(LIBFILE)
 	cp $(LIBFILE) $(LIB_PATH)/$(LIBFILE).1.0
 	ln -sf $(LIB_PATH)/$(LIBFILE).1.0 $(LIB_PATH)/$(LIBFILE).1
 	ln -sf $(LIB_PATH)/$(LIBFILE).1 $(LIB_PATH)/$(LIBFILE)
