@@ -51,6 +51,7 @@ int lsdb_cursor_open(lsdb_txn *txn, lsdb_dbi dbi, lsdb_cursor **cursor);
 void lsdb_cursor_close(lsdb_cursor *cursor);
 
 int lsdb_cursor_get(lsdb_cursor *cursor, lsdb_val *key, lsdb_val *data, lsdb_cursor_op op);
+int lsdb_cursor_put(lsdb_cursor *cursor, lsdb_val *key, lsdb_val *data, unsigned int flags);
 
 char *lsdb_strerror(int err);
 

@@ -5,7 +5,6 @@
 #include <lmdb.h>
 #include <stdlib.h>
 
-
 typedef struct lsdb_ctx {
 } lsdb_ctx;
 
@@ -111,6 +110,11 @@ void lsdb_cursor_close(lsdb_cursor *cursor)
 int lsdb_cursor_get(lsdb_cursor *cursor, lsdb_val *key, lsdb_val *data, lsdb_cursor_op op)
 {
 	return mdb_cursor_get(cursor, key, data, op);
+}
+
+int lsdb_cursor_put(lsdb_cursor *cursor, lsdb_val *key, lsdb_val *data, unsigned int flags)
+{
+	return mdb_cursor_put(cursor, key, data, flags);
 }
 
 char *lsdb_strerror(int err)
