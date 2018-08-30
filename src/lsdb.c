@@ -43,6 +43,11 @@ int lsdb_env_set_mapsize(lsdb_env *env, lsdb_size_t size)
 	return mdb_env_set_mapsize(env, size);
 }
 
+int lsdb_env_set_maxdbs(lsdb_env *env, lsdb_dbi dbs)
+{
+	return mdb_env_set_maxdbs(env, dbs);
+}
+
 int lsdb_env_set_maxreaders(lsdb_env *env, unsigned int readers)
 {
 	return mdb_env_set_maxreaders(env, readers);

@@ -1,6 +1,7 @@
 #ifndef _LSDB_H_
 #define _LSDB_H_
 
+#include <librecast.h>
 #include <lmdb.h>
 
 typedef struct lsdb_ctx lsdb_ctx;
@@ -29,6 +30,7 @@ int lsdb_env_create(lsdb_env **env);
 int lsdb_env_open(lsdb_env *env, const char *path, unsigned int flags, lsdb_mode_t mode);
 void lsdb_env_close(lsdb_env *env);
 int lsdb_env_set_mapsize(lsdb_env *env, lsdb_size_t size);
+int lsdb_env_set_maxdbs(lsdb_env *env, lsdb_dbi dbs);
 int lsdb_env_set_maxreaders(lsdb_env *env, unsigned int readers);
 int lsdb_env_stat(lsdb_env *env, lsdb_stat *stat);
 
