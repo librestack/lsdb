@@ -1,8 +1,12 @@
-TESTS = local mtest mtest2 mtest3 mtest4 mtest5
+TESTS = local
+MTESTS = mtest mtest2 mtest3 mtest4 mtest5
 
 test: all
-	rm -rf testdb && mkdir testdb
 	@for T in $(TESTS); do ./$$T; done
+
+mtests: $(MTESTS)
+	rm -rf testdb && mkdir testdb
+	@for T in $(MTESTS); do ./$$T; done
 
 mtest: mtest.c
 	$(CC) $(CFLAGS) mtest.c -o mtest -llmdb -llsdb
@@ -25,4 +29,4 @@ all: $(TESTS)
 
 clean:
 	rm -rf testdb
-	-$(RM) $(TESTS)
+	-$(RM) $(TESTS) $(MTESTS)

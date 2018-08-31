@@ -16,7 +16,7 @@ export LIBNAME
 all:
 	@$(MAKE) -C src $@
 
-.PHONY: install clean test
+.PHONY: install clean test mtest
 
 install:
 	@$(MAKE) -C src $@
@@ -26,4 +26,7 @@ clean:
 	@$(MAKE) -C test $@
 
 test:
+	@$(MAKE) -C test $@
+
+mtests:
 	@$(MAKE) -C test $@
