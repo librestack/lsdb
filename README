@@ -1,5 +1,17 @@
-README
+# LSDB
 
 Librestack database wrapper for LMDB.
 
 Early alpha work in progress.  DO NOT USE.
+
+By creating a wrapper for LMDB that exactly copies the API, we make our database
+drop-in compatible with LMDB.  Having done this, we can start adding additional
+functionality by extending the API, while still retaining complete compatibility
+with the base LMDB.
+
+## TODO
+
+- indexing functions (formerly part of Librecast)
+- multicast database replication
+- network queries
+- async mode
