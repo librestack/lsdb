@@ -2,7 +2,6 @@
 #include "../include/lsdb.h"
 #include "errors.h"
 #include "log.h"
-#include <lmdb.h>
 #include <stdlib.h>
 
 typedef struct lsdb_ctx {
