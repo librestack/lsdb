@@ -21,8 +21,6 @@ typedef mdb_size_t lsdb_size_t;
 typedef size_t lsdb_size_t;
 #endif
 
-#define LSDB_TEST 0
-
 lsdb_ctx * lsdb_ctx_new();
 void lsdb_ctx_free(lsdb_ctx *ctx);
 
