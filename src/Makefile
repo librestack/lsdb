@@ -1,4 +1,5 @@
 CFLAGS += -fPIC
+LIBNAME ?= lsdb
 LIBFILE = lib$(LIBNAME).so
 LIBS = -llmdb
 OBJECTS = $(LIBNAME).o errors.o log.o misc.o
