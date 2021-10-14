@@ -4,9 +4,7 @@
 #include <librecast.h>
 #include <lmdb.h>
 
-typedef struct lsdb_ctx lsdb_ctx;
-
-typedef struct MDB_env lsdb_env;
+typedef struct lsdb_env lsdb_env;
 typedef struct MDB_txn lsdb_txn;
 typedef unsigned int lsdb_dbi;
 typedef struct MDB_cursor lsdb_cursor;
@@ -20,9 +18,6 @@ typedef mdb_size_t lsdb_size_t;
 #else
 typedef size_t lsdb_size_t;
 #endif
-
-lsdb_ctx * lsdb_ctx_new();
-void lsdb_ctx_free(lsdb_ctx *ctx);
 
 int lsdb_env_create(lsdb_env **env);
 int lsdb_env_open(lsdb_env *env, const char *path, unsigned int flags, lsdb_mode_t mode);
