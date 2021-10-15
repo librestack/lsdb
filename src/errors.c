@@ -2,21 +2,14 @@
 #include <limits.h>
 #include <stdio.h>
 #include <string.h>
+#include "../include/lsdb.h"
 #include "log.h"
 #include "errors.h"
 
 int lsdb_error_log(int level, int e)
 {
-	logmsg(level, "%s", lsdb_error_msg(e));
+	logmsg(level, "%s", lsdb_strerror(e));
 	return e;
-}
-
-char *lsdb_error_msg(int e)
-{
-	switch (e) {
-		LSDB_ERROR_CODES(LSDB_ERROR_MSG)
-	}
-	return "Unknown error";
 }
 
 void lsdb_print_error(int e, int errsv, char *errstr)
@@ -27,6 +20,6 @@ void lsdb_print_error(int e, int errsv, char *errstr)
 		logmsg(LOG_SEVERE, "%s: %s", errstr, buf);
 	}
 	else if (e != 0) {
-		logmsg(LOG_SEVERE, "%s: %s", errstr, lsdb_error_msg(e));
+		logmsg(LOG_SEVERE, "%s: %s", errstr, lsdb_strerror(e));
 	}
 }
